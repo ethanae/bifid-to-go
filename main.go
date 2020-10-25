@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"math"
 	"net/http"
 	"os"
 	"strconv"
@@ -45,7 +44,7 @@ func main() {
 	flag.Parse()
 
 	if mustGenRandomPolybius {
-		pb := generateRandomPolybius("ABCDEFGHIJKLMNOPQRSTUVWXYZ", apiKey)
+		pb := generateRandomLatinPolybius(apiKey)
 		filePath := writePolybiusToFile(pb)
 		fmt.Println("------------")
 		fmt.Println("🆗 Created new random polybius at path: " + filePath)
@@ -235,10 +234,11 @@ type response struct {
 	ID      int    `json:"id"`
 }
 
-func generateRandomPolybius(alphabet string, apiKey string) polybiusSquare {
+func generateRandomLatinPolybius(apiKey string) polybiusSquare {
+	alphabet := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	amount := len(alphabet)
-	maxInt := amount - 1
-	randomNumbers := generateRandomNumbers(amount, 0, maxInt, false, apiKey)
+	maxUpperBound := amount - 1
+	randomNumbers := generateRandomNumbers(amount, 0, maxUpperBound, false, apiKey)
 	randomNumbersWithJRemoved := []int{}
 	// remove J's index in the alphabet because I and J refer to the same index in a polybius square
 	for _, v := range randomNumbers {
@@ -246,11 +246,11 @@ func generateRandomPolybius(alphabet string, apiKey string) polybiusSquare {
 			randomNumbersWithJRemoved = append(randomNumbersWithJRemoved, v)
 		}
 	}
-	matrixColRowSize := int(math.Sqrt(float64(maxInt)))
-	pb := make([][]string, matrixColRowSize, matrixColRowSize)
+
+	pb := make([][]string, 5, 5)
 	chunkSize := 5
 	x := 0
-	for i := 0; i < amount-1; i += chunkSize {
+	for i := 0; i < maxUpperBound; i += chunkSize {
 		min := i + chunkSize
 		if amount <= min {
 			min = amount

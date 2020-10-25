@@ -2,7 +2,7 @@
 
 #### Comes with a built-in non-pseudorandom polybius generator. The polybius generator only uses a latin alphabet where "J" is exchanged by "I" for all occurrences. Non-pseudo-randomness comes from generating 26 numbers in the range of 0-25. Using the random integer sequence, each integer is used to index the alphabet to find the corresponding letter and added to the matrix. The atmospheric noise generator service used is [https://www.random.org/](https://www.random.org/). 
 
-#### The project comes with 10 randomly generated polybius squares in the generated_polybius_squares directory
+#### The project comes pre-generated polybius squares in the /generated_polybius_squares directory
 
 ### Encrypt/Decrypt text:
 #### Run the executable with a path to your polybius file:
