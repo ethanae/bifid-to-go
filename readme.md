@@ -1,12 +1,11 @@
-### Polybius Bifid Cipher 
+## Polybius Bifid Cipher 
 
-#### Comes with a built-in non-pseudorandom polybius generator
-##### The polybius generator only uses a latin alphabet where "J" is exchanged by "I" for all occurrences. Non-pseudo-randomness comes from generating 26 numbers in the range of 0-25. Using the random integer sequence, each integer used to index the alphabet and get the letter to build up the matrix. The generator service used is [https://www.random.org/](https://www.random.org/). 
+#### Comes with a built-in non-pseudorandom polybius generator. The polybius generator only uses a latin alphabet where "J" is exchanged by "I" for all occurrences. Non-pseudo-randomness comes from generating 26 numbers in the range of 0-25. Using the random integer sequence, each integer used to index the alphabet and get the letter to build up the matrix. The generator service used is [https://www.random.org/](https://www.random.org/). 
 
-### The project comes with 10 randomly generated polybius squares in the generated_polybius_squares directory
+#### The project comes with 10 randomly generated polybius squares in the generated_polybius_squares directory
 
 ### Encrypt/Decrypt text:
-#### Run the executable:
+#### Run the executable with a path to your polybius file:
 `./build/bifid.sh -pb=path/to/a/polybius/square.json`
 
 #### An encrypt operation is used by prefixing the input with a "+"
