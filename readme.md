@@ -28,7 +28,7 @@
 | output > HELLO
 ```
 
-#### Generate a polybius matrix:
+### Generate a polybius matrix:
 #### Note: you need an API key for [https://www.random.org/](https://www.random.org/) in order to generate the random integer sequence
 ```
 ./build/bifid.sh -gen -apiKey=<your_api_key> 
