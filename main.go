@@ -72,10 +72,10 @@ func main() {
 		operation := string(input[0])
 
 		if operation == "+" {
-			fmt.Println("Encrypting message...")
+			fmt.Println("🔐 Encrypting message...")
 			output = encrypt(input[1:], polybius)
 		} else if operation == "-" {
-			fmt.Println("Decrypting message...")
+			fmt.Println("🔓 Decrypting message...")
 			output = decrypt(input[1:], polybius)
 		} else {
 			fmt.Println("Missing operation. The very first character must be either '+' for encryption or '-' for decryption.")
