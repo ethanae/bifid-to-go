@@ -8,8 +8,8 @@
 #### Run the executable with a path to your polybius file:
 `./build/bifid.sh -pb=path/to/a/polybius/square.json`
 
-#### An encrypt operation is used by prefixing the input with a "+"
-#### A decrypt operation is used by prefixing the input with a "-"
+#### An encrypt operation is used by prefixing the input with "+"
+#### A decrypt operation is used by prefixing the input with "-"
 
 ```
 | ./build/bifid.sh -pb=./generated_polybius_squares/polybius_1603628969.json 
@@ -20,7 +20,7 @@
 | ------------ 
 ```
 
-#### To Decrypt a message simply change the input prefix to "-"
+#### To decrypt a message simply change the input prefix to "-"
 ```
 | ------------
 | input  > -XHZSO
