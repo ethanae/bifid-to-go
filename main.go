@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"math"
 	"net/http"
 	"os"
 	"strconv"
@@ -235,9 +236,9 @@ type response struct {
 }
 
 func generateRandomPolybius(alphabet string, apiKey string) polybiusSquare {
-	amount := 26
-
-	randomNumbers := generateRandomNumbers(amount, 0, 25, false, apiKey)
+	amount := len(alphabet)
+	maxInt := amount - 1
+	randomNumbers := generateRandomNumbers(amount, 0, maxInt, false, apiKey)
 	randomNumbersWithJRemoved := []int{}
 	// remove J's index in the alphabet because I and J refer to the same index in a polybius square
 	for _, v := range randomNumbers {
@@ -245,8 +246,8 @@ func generateRandomPolybius(alphabet string, apiKey string) polybiusSquare {
 			randomNumbersWithJRemoved = append(randomNumbersWithJRemoved, v)
 		}
 	}
-
-	pb := make([][]string, 5, 5)
+	matrixColRowSize := int(math.Sqrt(float64(maxInt)))
+	pb := make([][]string, matrixColRowSize, matrixColRowSize)
 	chunkSize := 5
 	x := 0
 	for i := 0; i < amount-1; i += chunkSize {
