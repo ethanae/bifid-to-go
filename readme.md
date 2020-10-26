@@ -5,8 +5,15 @@
 #### The project comes pre-generated polybius squares in the /generated_polybius_squares directory
 
 ### Encrypt/Decrypt text:
-#### Run the executable with a path to your polybius file:
-`./build/bifid.sh -pb=path/to/a/polybius/square.json`
+#### Run the executable with a path to your polybius file (the build directory containts programs for Linux and Windows):
+```
+// Linux
+./build/bifid.sh -pb=path/to/a/polybius/square.json
+```
+```
+// Windows
+./build/bifid.exe -pb=path/to/a/polybius/square.json
+```
 
 #### An encrypt operation is used by prefixing the input with "+"
 #### A decrypt operation is used by prefixing the input with "-"
@@ -31,8 +38,14 @@
 ### Generate a polybius matrix:
 #### Note: you need an API key for [https://www.random.org/](https://www.random.org/) in order to generate the random integer sequence
 ```
+// Linux
 ./build/bifid.sh -gen -apiKey=<your_api_key> 
 ```
+```
+// Windows
+./build/bifid.exe -gen -apiKey=<your_api_key> 
+```
+
 #### Output
 ```
 ------------
