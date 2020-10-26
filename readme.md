@@ -53,3 +53,13 @@
 Re-run the program with the new polybius file
 ------------
 ```
+
+#### Rebuilding executables (Golang is required):
+```
+// Linux
+env GOOS=linux GOARCH=amd64 go build -o ./build/bifid.sh  
+```
+```
+// Windows
+env GOOS=windows GOARCH=amd64 go build -o ./build/bifid.exe
+```
